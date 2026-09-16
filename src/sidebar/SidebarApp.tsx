@@ -1,5 +1,5 @@
-import './styles.css'
-import reactLogo from '../images/icon.png'
+import "./styles.css";
+import reactLogo from "../images/icon.png";
 
 export default function SidebarApp() {
   return (
@@ -11,9 +11,9 @@ export default function SidebarApp() {
           alt="The React logo"
           width="120"
         />
-        <h1 className="sidebar_title">Sidebar Panel</h1>
+        <h1 className="sidebar_title">Sidebar Pan</h1>
         <p className="sidebar_description">
-          Learn more in the{' '}
+          Learn more in the{" "}
           <a
             href="https://extension.js.org"
             target="_blank"
@@ -26,5 +26,5 @@ export default function SidebarApp() {
         </p>
       </header>
     </div>
-  )
+  );
 }
