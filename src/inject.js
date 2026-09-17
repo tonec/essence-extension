@@ -1,32 +1,57 @@
-
 (function () {
-  console.log('injected js')
+  console.log('inject script')
+  const TARGET_KEYWORD = 'HomeTimeline';
+
+  // FETCH intercept
   const originalFetch = window.fetch;
 
   window.fetch = async function (...args) {
-    const url = args[0];
+    const input = args[0];
+    const urlString = (typeof input === 'string') ? input : (input && input.url) ? input.url : '';
 
-    // Detect if X is natively fetching the Chronological "Following" timeline
-    if (typeof url === 'string' && url.includes('HomeLatestTimeline')) {
+    if (urlString.includes(TARGET_KEYWORD)) {
       try {
         const response = await originalFetch.apply(this, args);
-        // Clone response so we do not block the page layout from rendering naturally
         const clonedResponse = response.clone();
 
         clonedResponse.json().then(data => {
-          // Send raw backend data directly to our extension bridge
-          window.postMessage({
-            type: "CHRONOS_INTERCEPTED_X_DATA",
-            payload: data
-          }, "*");
-        });
+          sendToExtensionBridge({ url, data });
+        }).catch(() => { });
 
         return response;
       } catch (err) {
         return originalFetch.apply(this, args);
       }
     }
-
     return originalFetch.apply(this, args);
   };
+
+  //  XMLHTTPREQUEST (XHR) intercept
+  const originalXHR = window.XMLHttpRequest.prototype.open;
+  window.XMLHttpRequest.prototype.open = function (method, url, ...rest) {
+    this._url = typeof url === 'string' ? url : '';
+
+    // Attach a listener to capture data at the moment the request finishes loading
+    this.addEventListener('load', function () {
+      if (this._url.includes(TARGET_KEYWORD)) {
+        console.log('url with keyword', url)
+        try {
+          const data = JSON.parse(this.responseText);
+          sendToExtensionBridge({ url, data });
+        } catch (e) {
+          // Response wasn't clean JSON or stream not ready yet
+        }
+      }
+    });
+
+    return originalXHR.apply(this, [method, url, ...rest]);
+  };
+
+  // Common interaction bridge
+  function sendToExtensionBridge({ url, data }) {
+    window.postMessage({
+      type: "INTERCEPTED_X_DATA",
+      payload: { url, data }
+    }, "*");
+  }
 })();

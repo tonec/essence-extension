@@ -1,3 +1,4 @@
+import { INTERCEPTED_X_DATA } from "./actions";
 import { SYNC_INTERVAL } from "./config";
 import { runLocalSync } from "./runLocalSync";
 
@@ -25,6 +26,8 @@ if (!isFirefoxLike) {
   // The side panel API only exists in Chromium. Firefox opens the sidebar in
   // the listener above, so this listener is compiled out of gecko builds.
   chrome.runtime.onMessage.addListener((message, sender) => {
+    console.log("on message background", message);
+
     if (!message || message.type !== "openSidebar") return;
 
     // Every line here runs synchronously on purpose. sidePanel.open() is only
@@ -40,6 +43,13 @@ if (!isFirefoxLike) {
       chrome.sidePanel.open({ tabId });
     } catch (error) {
       console.error(error);
+    }
+
+    if (
+      message.target === "background" &&
+      message.action === INTERCEPTED_X_DATA
+    ) {
+      console.log("message background", message);
     }
   });
 

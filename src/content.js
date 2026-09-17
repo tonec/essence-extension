@@ -9,7 +9,7 @@ script.onload = () => script.remove();
 window.addEventListener("message", (event) => {
   if (event.source !== window) return;
 
-  if (event.data && event.data.type === "CHRONOS_INTERCEPTED_X_DATA") {
+  if (event.data && event.data.type === "INTERCEPTED_X_DATA") {
     chrome.runtime.sendMessage({
       target: 'background',
       action: 'PROCESS_RAW_X_FEED',
