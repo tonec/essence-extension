@@ -43,14 +43,14 @@ if (!isFirefoxLike) {
     }
   });
 
-  chrome.runtime.onInstalled.addListener(async () => {
-    chrome.alarms.create("syncXTimeline", { periodInMinutes: SYNC_INTERVAL });
-    await runLocalSync();
-  });
+  // chrome.runtime.onInstalled.addListener(async () => {
+  //   chrome.alarms.create("syncXTimeline", { periodInMinutes: SYNC_INTERVAL });
+  //   await runLocalSync();
+  // });
 
-  chrome.alarms.onAlarm.addListener(async (alarm) => {
-    if (alarm.name === "syncXTimeline") {
-      await runLocalSync();
-    }
-  });
+  // chrome.alarms.onAlarm.addListener(async (alarm) => {
+  //   if (alarm.name === "syncXTimeline") {
+  //     await runLocalSync();
+  //   }
+  // });
 }
