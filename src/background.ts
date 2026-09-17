@@ -1,6 +1,5 @@
-console.log(
-  "[From the background context] Hello from the background worker/script!",
-);
+import { SYNC_INTERVAL } from "./config";
+import { runLocalSync } from "./runLocalSync";
 
 const isFirefoxLike =
   import.meta.env.EXTENSION_PUBLIC_BROWSER === "firefox" ||
@@ -41,6 +40,17 @@ if (!isFirefoxLike) {
       chrome.sidePanel.open({ tabId });
     } catch (error) {
       console.error(error);
+    }
+  });
+
+  chrome.runtime.onInstalled.addListener(async () => {
+    chrome.alarms.create("syncXTimeline", { periodInMinutes: SYNC_INTERVAL });
+    await runLocalSync();
+  });
+
+  chrome.alarms.onAlarm.addListener(async (alarm) => {
+    if (alarm.name === "syncXTimeline") {
+      await runLocalSync();
     }
   });
 }
