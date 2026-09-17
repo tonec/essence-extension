@@ -1,5 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/chrome-manifest.json",
+  "manifest_version": 3,
   "chromium:manifest_version": 3,
   "firefox:manifest_version": 2,
   "version": "1.0.0",
@@ -7,9 +8,7 @@
     "gecko": {
       "id": "react@extension.js",
       "data_collection_permissions": {
-        "required": [
-          "none"
-        ]
+        "required": ["none"]
       }
     }
   },
@@ -50,23 +49,16 @@
     "default_panel": "sidebar/index.html",
     "default_title": "Side Panel Content"
   },
-  "chromium:permissions": [
-    "sidePanel"
-  ],
+  "chromium:permissions": ["sidePanel", "storage", "alarms", "offscreen"],
+  "chromium:host_permissions": ["https://*://*", "https://*://*"],
   "background": {
     "chromium:service_worker": "background.ts",
-    "firefox:scripts": [
-      "background.ts"
-    ]
+    "firefox:scripts": ["background.ts"]
   },
   "content_scripts": [
     {
-      "matches": [
-        "<all_urls>"
-      ],
-      "js": [
-        "content/scripts.tsx"
-      ]
+      "matches": ["<all_urls>"],
+      "js": ["content/scripts.tsx"]
     }
   ]
 }

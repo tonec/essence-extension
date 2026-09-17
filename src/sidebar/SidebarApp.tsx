@@ -2,6 +2,10 @@ import "./styles.css";
 import reactLogo from "../images/icon.png";
 
 export default function SidebarApp() {
+  const handleClick = () => {
+    console.log("clicked");
+  };
+
   return (
     <div className="sidebar_app">
       <header>
@@ -24,6 +28,7 @@ export default function SidebarApp() {
           </a>
           .
         </p>
+        <button onClick={handleClick}>Click me</button>
       </header>
     </div>
   );
