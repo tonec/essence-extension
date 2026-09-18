@@ -1,66 +1,27 @@
 import { INTERCEPTED_X_DATA } from "./actions";
 import { SYNC_INTERVAL } from "./config";
 import { runLocalSync } from "./runLocalSync";
+import { isMessage } from "./utils/isMessage";
 
-const isFirefoxLike =
-  import.meta.env.EXTENSION_PUBLIC_BROWSER === "firefox" ||
-  import.meta.env.EXTENSION_PUBLIC_BROWSER === "gecko-based";
+browser.runtime.onMessage.addListener((message: unknown) => {
+  console.log("background-js onMessage", message);
 
-if (isFirefoxLike) {
-  browser.browserAction.onClicked.addListener(() => {
-    browser.sidebarAction.open();
-  });
+  if (
+    isMessage(message) &&
+    message.target === "background" &&
+    message.action === INTERCEPTED_X_DATA
+  ) {
+    console.log("message background", message);
+  }
+});
 
-  browser.runtime.onMessage.addListener((message: any) => {
-    if (!message || message.type !== "openSidebar") return;
+// browser.runtime.onInstalled.addListener(async () => {
+//   chrome.alarms.create("syncXTimeline", { periodInMinutes: SYNC_INTERVAL });
+//   await runLocalSync();
+// });
 
-    browser.sidebarAction.open();
-  });
-}
-
-if (!isFirefoxLike) {
-  // setPanelBehavior only affects FUTURE action clicks, registering it
-  // inside onClicked would swallow the first toolbar click.
-  chrome.sidePanel.setPanelBehavior({ openPanelOnActionClick: true });
-
-  // The side panel API only exists in Chromium. Firefox opens the sidebar in
-  // the listener above, so this listener is compiled out of gecko builds.
-  chrome.runtime.onMessage.addListener((message, sender) => {
-    console.log("on message background", message);
-
-    if (!message || message.type !== "openSidebar") return;
-
-    // Every line here runs synchronously on purpose. sidePanel.open() is only
-    // allowed inside the user gesture that the content-script click carries, and
-    // a tabs.query callback outlives it: the panel then silently refuses to open.
-    // sender.tab is the tab the click came from, so no lookup is needed at all.
-    chrome.sidePanel.setPanelBehavior({ openPanelOnActionClick: true });
-
-    const tabId = sender.tab?.id;
-    if (!chrome.sidePanel.open || tabId === undefined) return;
-
-    try {
-      chrome.sidePanel.open({ tabId });
-    } catch (error) {
-      console.error(error);
-    }
-
-    if (
-      message.target === "background" &&
-      message.action === INTERCEPTED_X_DATA
-    ) {
-      console.log("message background", message);
-    }
-  });
-
-  // chrome.runtime.onInstalled.addListener(async () => {
-  //   chrome.alarms.create("syncXTimeline", { periodInMinutes: SYNC_INTERVAL });
-  //   await runLocalSync();
-  // });
-
-  // chrome.alarms.onAlarm.addListener(async (alarm) => {
-  //   if (alarm.name === "syncXTimeline") {
-  //     await runLocalSync();
-  //   }
-  // });
-}
+// browser.alarms.onAlarm.addListener(async (alarm) => {
+//   if (alarm.name === "syncXTimeline") {
+//     await runLocalSync();
+//   }
+// });

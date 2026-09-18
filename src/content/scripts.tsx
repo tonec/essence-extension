@@ -15,7 +15,7 @@ export default function initial() {
   window.addEventListener("message", (event) => {
     if (event.source !== window) return;
 
-    if (event.data && event.data.type === "CHRONOS_INTERCEPTED_X_DATA") {
+    if (event.data && event.data.type === INTERCEPTED_X_DATA) {
       console.log("content", event.data.payload);
       chrome.runtime.sendMessage({
         target: "background",

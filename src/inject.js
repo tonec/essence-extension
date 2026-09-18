@@ -1,5 +1,6 @@
 (function () {
-  console.log('inject script')
+  console.info("Injection script running on page")
+
   const TARGET_KEYWORD = 'HomeTimeline';
 
   // FETCH intercept
@@ -34,7 +35,6 @@
     // Attach a listener to capture data at the moment the request finishes loading
     this.addEventListener('load', function () {
       if (this._url.includes(TARGET_KEYWORD)) {
-        console.log('url with keyword', url)
         try {
           const data = JSON.parse(this.responseText);
           sendToExtensionBridge({ url, data });
