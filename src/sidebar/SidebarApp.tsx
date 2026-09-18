@@ -7,15 +7,15 @@ export default function SidebarApp() {
   };
 
   return (
-    <div className="sidebar_app">
-      <header>
+    <div className="flex flex-col items-center justify-center h-screen">
+      <header className="flex flex-col items-center justify-center">
         <img
-          className="sidebar_logo"
+          className="pb-1"
           src={reactLogo}
           alt="The React logo"
           width="120"
         />
-        <h1 className="sidebar_title">Essence</h1>
+        <h1 className="text-xl font-bold pb-2">Essence</h1>
         <Button variant="outline" onClick={handleClick}>
           Button
         </Button>
