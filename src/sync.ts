@@ -11,7 +11,8 @@ async function ensureOffscreen() {
     creating = chrome.offscreen.createDocument({
       url: "pages/offscreen.html",
       reasons: [chrome.offscreen.Reason.DOM_PARSER],
-      justification: "Parse HTML strings that the service worker cannot",
+      justification:
+        "Load a page in the background and intercept fetch requests",
     });
   }
 

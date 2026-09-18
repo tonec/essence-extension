@@ -1,9 +1,19 @@
 import { Button } from "@/components/ui/button";
 import reactLogo from "../images/icon.png";
+import { FETCH_X_DATA } from "@/config";
 
 export default function SidebarApp() {
-  const handleClick = () => {
+  const handleClick = async () => {
     console.log("clicked");
+    try {
+      const response = await browser.runtime.sendMessage({
+        target: "offscreen",
+        action: FETCH_X_DATA,
+      });
+      console.log("Reponse ", response);
+    } catch (error) {
+      console.error("Error communicating:", error);
+    }
   };
 
   return (
@@ -17,7 +27,7 @@ export default function SidebarApp() {
         />
         <h1 className="text-xl font-bold pb-2">Essence</h1>
         <Button variant="outline" onClick={handleClick}>
-          Button
+          Trigger sync
         </Button>
       </header>
     </div>
