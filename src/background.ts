@@ -1,6 +1,6 @@
-import { INTERCEPTED_X_DATA } from "./actions";
+import { ALARM_SYNC, INTERCEPTED_X_DATA } from "./config";
 import { SYNC_INTERVAL } from "./config";
-import { runLocalSync } from "./runLocalSync";
+import { initSync } from "./sync";
 import { isMessage } from "./utils/isMessage";
 
 browser.runtime.onMessage.addListener((message: unknown) => {
@@ -15,13 +15,13 @@ browser.runtime.onMessage.addListener((message: unknown) => {
   }
 });
 
-// browser.runtime.onInstalled.addListener(async () => {
-//   chrome.alarms.create("syncXTimeline", { periodInMinutes: SYNC_INTERVAL });
-//   await runLocalSync();
-// });
+browser.runtime.onInstalled.addListener(async () => {
+  chrome.alarms.create(ALARM_SYNC, { periodInMinutes: SYNC_INTERVAL });
+  await initSync();
+});
 
 // browser.alarms.onAlarm.addListener(async (alarm) => {
-//   if (alarm.name === "syncXTimeline") {
-//     await runLocalSync();
+//   if (alarm.name === ALARM_SYNC) {
+//     await initSync();
 //   }
 // });

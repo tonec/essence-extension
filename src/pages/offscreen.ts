@@ -1,57 +1,16 @@
-console.log("offscreen js running");
+import { FETCH_X_DATA } from "../config";
+import { isMessage } from "../utils/isMessage";
 
-chrome.runtime.onMessage.addListener(async (message) => {
-  console.log("offscreen listener", message);
-  if (message.target === "offscreen" && message.action === "FETCH_X_DATA") {
-    const { csrfToken } = message.securityContext;
-    let nextCursor = null;
+console.info("Essence: Offscreen js running");
 
-    console.log("fetching with ", csrfToken);
+browser.runtime.onMessage.addListener((message: unknown) => {
+  console.info("Essence: Offscreen listener message: ", message);
 
-    // try {
-    const variables = {
-      count: 40,
-      cursor: nextCursor,
-      includePromotedContent: false,
-    };
-
-    const targetUrl = `https://x.com?${encodeURIComponent(JSON.stringify(variables))}`;
-
-    console.log("targetUrl", targetUrl);
-
-    const response = await fetch(targetUrl, {
-      method: "GET",
-      headers: {
-        "x-csrf-token": csrfToken, // INJECTED HEADER SECURITY KEY
-        "Content-Type": "application/json",
-        "x-twitter-active-user": "yes",
-        "x-twitter-client-language": "en",
-      },
-      credentials: "include",
-    });
-
-    if (!response.ok) {
-      throw new Error("Could not authenticate with active session cookies.");
-    }
-
-    console.log("response", JSON.stringify(response));
-
-    // const json = await response.json();
-
-    // console.log("response json", json);
-
-    chrome.runtime.sendMessage({
-      target: "background",
-      action: "X_DATA_PARSED",
-      // payload: json,
-    });
-    // } catch (error) {
-    //   console.error("Offscreen X compilation failed:", error);
-    //   chrome.runtime.sendMessage({
-    //     target: "background",
-    //     action: "X_DATA_PARSED",
-    //     payload: [],
-    //   });
-    // }
+  if (
+    isMessage(message) &&
+    message.target === "offscreen" &&
+    message.action === FETCH_X_DATA
+  ) {
+    console.log("message received FETCH_X_DATA");
   }
 });

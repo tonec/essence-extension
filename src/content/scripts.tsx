@@ -1,4 +1,4 @@
-import { INTERCEPTED_X_DATA } from "../actions";
+import { INTERCEPTED_X_DATA } from "../config";
 
 console.info("Essence: content script running");
 

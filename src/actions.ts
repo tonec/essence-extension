@@ -1,1 +1,0 @@
-export const INTERCEPTED_X_DATA = "INTERCEPTED_X_DATA";

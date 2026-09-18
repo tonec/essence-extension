@@ -56,7 +56,7 @@
     "offscreen",
     "cookies"
   ],
-  "chromium:host_permissions": ["https://*://*", "https://*://*"],
+  "chromium:host_permissions": ["<all_urls>"],
   "background": {
     "chromium:service_worker": "background.ts",
     "firefox:scripts": ["background.ts"]
