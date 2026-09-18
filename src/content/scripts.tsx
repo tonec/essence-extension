@@ -1,12 +1,14 @@
 import { INTERCEPTED_X_DATA } from "../actions";
 
+console.info("Essence: content script running");
+
 /**
  * Extension.js content_script entrypoint. The framework calls this on
  * injection and calls the returned function on HMR/teardown to clean up.
  * Do not invoke it yourself.
  */
 export default function initial() {
-  console.info("Essence: content script running");
+  console.info("Essence: content script initial function running");
 
   const script = document.createElement("script");
   const injectUrl = chrome.runtime.getURL("inject.js");
