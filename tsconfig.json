@@ -17,7 +17,10 @@
     "target": "esnext",
     "verbatimModuleSyntax": false,
     "useDefineForClassFields": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": ["./", "extension-env.d.ts"],
   "exclude": ["node_modules", "dist"]

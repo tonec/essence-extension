@@ -1,4 +1,4 @@
-import "./styles.css";
+import { Button } from "@/components/ui/button";
 import reactLogo from "../images/icon.png";
 
 export default function SidebarApp() {
@@ -16,7 +16,9 @@ export default function SidebarApp() {
           width="120"
         />
         <h1 className="sidebar_title">Essence</h1>
-        <button onClick={handleClick}>Click me</button>
+        <Button variant="outline" onClick={handleClick}>
+          Button
+        </Button>
       </header>
     </div>
   );
