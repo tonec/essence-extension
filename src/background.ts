@@ -4,7 +4,7 @@ import { runLocalSync } from "./runLocalSync";
 import { isMessage } from "./utils/isMessage";
 
 browser.runtime.onMessage.addListener((message: unknown) => {
-  console.log("background-js onMessage", message);
+  console.info("Essence: background-js onMessage", message);
 
   if (
     isMessage(message) &&

@@ -6,6 +6,8 @@ import { INTERCEPTED_X_DATA } from "../actions";
  * Do not invoke it yourself.
  */
 export default function initial() {
+  console.info("Essence: content script running");
+
   const script = document.createElement("script");
   const injectUrl = chrome.runtime.getURL("inject.js");
   script.src = injectUrl;

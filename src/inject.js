@@ -1,7 +1,8 @@
 (function () {
-  console.info("Injection script running on page")
+  console.info("Essence: Injection script running on page")
 
   const TARGET_KEYWORD = 'HomeTimeline';
+  const MESSAGE_TYPE = "INTERCEPTED_X_DATA";
 
   // FETCH intercept
   const originalFetch = window.fetch;
@@ -50,7 +51,7 @@
   // Common interaction bridge
   function sendToExtensionBridge({ url, data }) {
     window.postMessage({
-      type: "INTERCEPTED_X_DATA",
+      type: MESSAGE_TYPE,
       payload: { url, data }
     }, "*");
   }
