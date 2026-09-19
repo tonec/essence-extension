@@ -51,7 +51,6 @@
 
   // Common interaction bridge
   function sendToExtensionBridge({ url, data }) {
-    console.log('send to bridge: ', url)
     window.postMessage({
       type: MESSAGE_TYPE,
       payload: { url, data }

@@ -65,8 +65,8 @@
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
-      "js": ["content/scripts.tsx"],
+      "matches": ["https://x.com/*"],
+      "js": ["content/bridge.tsx"],
       "run_at": "document_start"
     }
   ],

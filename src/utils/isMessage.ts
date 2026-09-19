@@ -3,6 +3,7 @@ import { hasProperty } from "./hasProperty";
 type Message = {
   target: string;
   action: string;
+  payload: Record<string, unknown>;
 };
 
 export const isMessage = (message: unknown): message is Message => {
