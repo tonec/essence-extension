@@ -1,27 +1,64 @@
-let creating: Promise<void> | null = null;
+async function executeAutomation(
+  tabId: number | undefined,
+  windowId: number | undefined,
+) {
+  if (!tabId) return;
 
-async function ensureOffscreen() {
-  const contexts = await chrome.runtime.getContexts({
-    contextTypes: ["OFFSCREEN_DOCUMENT" as chrome.runtime.ContextType],
+  try {
+    // Inject the script file into the tab
+    const [result] = await chrome.scripting.executeScript({
+      target: { tabId },
+      files: ["inject.js"],
+    });
+
+    console.log("Scraped data received from tab:", result.result);
+
+    if (typeof windowId === "number") {
+      // chrome.windows.remove(windowId);
+    }
+  } catch (error) {
+    console.error("Script injection failed:", error);
+  }
+}
+
+// Function to create a hidden background window and load X
+async function openHiddenTab(targetUrl: string) {
+  await chrome.scripting.registerContentScripts([
+    {
+      id: "inject-script",
+      js: ["inject.js"],
+      matches: ["https://x.com/*"],
+      runAt: "document_start",
+      world: "MAIN",
+    },
+  ]);
+
+  chrome.windows.create({
+    url: targetUrl,
+    type: "normal",
   });
 
-  if (contexts.length > 0) return;
-
-  if (!creating) {
-    creating = chrome.offscreen.createDocument({
-      url: "pages/offscreen.html",
-      reasons: [chrome.offscreen.Reason.DOM_PARSER],
-      justification:
-        "Load a page in the background and intercept fetch requests",
-    });
-  }
-
-  await creating;
-  creating = null;
+  //   // Option A: Create a minimized window to keep it out of sight
+  // const window = await chrome.windows.create({
+  //     url: targetUrl,
+  //     focused: false,
+  //     state: "minimized",
+  //   });
+  //   let tabId: number | undefined = window?.tabs?.[0]?.id;
+  //   // Listen for the tab to finish loading
+  //   chrome.tabs.onCreated.addListener(function listener(tab) {
+  //     console.log("tab", tab);
+  //     if (tab.id === tabId) {
+  //       // Remove listener so it doesn't fire again
+  //       chrome.tabs.onCreated.removeListener(listener);
+  //       // Inject your automation/scraping script
+  //       executeAutomation(tabId, window.id);
+  //     }
+  //   });
 }
 
 export const initSync = async () => {
   console.info("Essense: Initialising sync");
 
-  await ensureOffscreen();
+  openHiddenTab("https://x.com");
 };

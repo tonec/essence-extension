@@ -1,7 +1,7 @@
 (function () {
   console.info("Essence: Injection script running on page")
 
-  const TARGET_KEYWORD = 'HomeTimeline';
+  const TARGET_KEYWORDS = ['HomeTimeline', 'HomeLatestTimeline'];
   const MESSAGE_TYPE = "INTERCEPTED_X_DATA";
 
   // FETCH intercept
@@ -11,13 +11,13 @@
     const input = args[0];
     const urlString = (typeof input === 'string') ? input : (input && input.url) ? input.url : '';
 
-    if (urlString.includes(TARGET_KEYWORD)) {
+    if (TARGET_KEYWORDS.some((keyword) => urlString.includes(keyword))) {
       try {
         const response = await originalFetch.apply(this, args);
         const clonedResponse = response.clone();
 
         clonedResponse.json().then(data => {
-          sendToExtensionBridge({ url, data });
+          sendToExtensionBridge({ url: urlString, data });
         }).catch(() => { });
 
         return response;
@@ -31,14 +31,15 @@
   //  XMLHTTPREQUEST (XHR) intercept
   const originalXHR = window.XMLHttpRequest.prototype.open;
   window.XMLHttpRequest.prototype.open = function (method, url, ...rest) {
-    this._url = typeof url === 'string' ? url : '';
+    const urlString = (typeof url === 'string') ? url : (url && url.toString) ? url.toString() : '';
+    this._url = urlString;
 
     // Attach a listener to capture data at the moment the request finishes loading
     this.addEventListener('load', function () {
-      if (this._url.includes(TARGET_KEYWORD)) {
+      if (TARGET_KEYWORDS.some((keyword) => urlString.includes(keyword))) {
         try {
           const data = JSON.parse(this.responseText);
-          sendToExtensionBridge({ url, data });
+          sendToExtensionBridge({ url: this._url, data });
         } catch (e) {
           // Response wasn't clean JSON or stream not ready yet
         }
@@ -50,6 +51,7 @@
 
   // Common interaction bridge
   function sendToExtensionBridge({ url, data }) {
+    console.log('send to bridge: ', url)
     window.postMessage({
       type: MESSAGE_TYPE,
       payload: { url, data }
