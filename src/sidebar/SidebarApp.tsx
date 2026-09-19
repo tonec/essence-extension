@@ -4,7 +4,6 @@ import { FETCH_X_DATA } from "@/config";
 
 export default function SidebarApp() {
   const handleClick = async () => {
-    console.log("clicked");
     try {
       const response = await browser.runtime.sendMessage({
         target: "background",

@@ -3,8 +3,6 @@ import SidebarApp from "./SidebarApp";
 
 import "../styles/globals.css";
 
-console.log("[From the sidebar page context] Hello regular page!");
-
 const rootElement = document.getElementById("root");
 
 if (!rootElement) {
