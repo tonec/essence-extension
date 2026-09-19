@@ -37,3 +37,19 @@ npm run preview
 ## Learn more
 
 [Extension.js docs](https://extension.js.org).
+
+## Sync flow
+
+Sidebar > Button press
+
+INITIATE_SYNC
+
+backgroundjs > initSync()
+
+sync > openHiddenTab > inject
+
+injectjs > intercept requests > extract csfr, auth and queryId
+
+X_TOKENS_CAPTURED
+
+bridge > fetch data

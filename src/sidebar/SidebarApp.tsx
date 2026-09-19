@@ -1,13 +1,13 @@
 import { Button } from "@/components/ui/button";
 import reactLogo from "../images/icon.png";
-import { FETCH_X_DATA } from "@/config";
+import { INITIATE_SYNC } from "@/config";
 
 export default function SidebarApp() {
   const handleClick = async () => {
     try {
       const response = await browser.runtime.sendMessage({
         target: "background",
-        action: FETCH_X_DATA,
+        action: INITIATE_SYNC,
       });
       console.log("Reponse ", response);
     } catch (error) {
@@ -26,7 +26,7 @@ export default function SidebarApp() {
         />
         <h1 className="text-xl font-bold pb-2">Essence</h1>
         <Button variant="outline" onClick={handleClick}>
-          Trigger sync
+          Initiate sync
         </Button>
       </header>
     </div>

@@ -1,12 +1,14 @@
 import { hasProperty } from "./hasProperty";
 
-type Message = {
+type Message<T> = {
   target: string;
   action: string;
-  payload: Record<string, unknown>;
+  payload: Record<string, T>;
 };
 
-export const isMessage = (message: unknown): message is Message => {
+export const isMessage = <T extends unknown>(
+  message: unknown,
+): message is Message<T> => {
   if (message && typeof message === "object") {
     if (hasProperty(message, "target") && hasProperty(message, "action")) {
       return true;

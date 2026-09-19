@@ -19,7 +19,5 @@ async function openHiddenTab(targetUrl: string) {
 }
 
 export const initSync = async () => {
-  console.info("Essense: Initialising sync");
-
   openHiddenTab("https://x.com");
 };

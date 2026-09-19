@@ -1,14 +1,19 @@
 import { X_TOKENS_CAPTURED } from "@/config";
 import { defaultFeatures, defaultHeaders } from "./xFetchRequest";
+import { isMessage } from "@/utils/isMessage";
 
 export default function initial() {
-  window.addEventListener("message", async (event) => {
+  window.addEventListener("message", async ({ source, data: message }) => {
     // Security Check: Only accept messages originating from the current webpage frame
-    if (event.source !== window) return;
+    if (source !== window) return;
 
     // X_TOKENS_CAPTURED sent the inject script
-    if (event.data && event.data.type === X_TOKENS_CAPTURED) {
-      const { csrf, auth, queryId } = event.data.payload;
+    if (
+      isMessage<string>(message) &&
+      message.target === "bridge" &&
+      message.action === X_TOKENS_CAPTURED
+    ) {
+      const { csrf, auth, queryId } = message.payload;
 
       const baseUrl = `https://x.com/i/api/graphql/${queryId}/HomeLatestTimeline`;
 

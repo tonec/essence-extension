@@ -1,4 +1,4 @@
-import { FETCH_X_DATA } from "./config";
+import { INITIATE_SYNC } from "./config";
 import { initSync } from "./sync";
 import { isMessage } from "./utils/isMessage";
 
@@ -11,7 +11,7 @@ browser.runtime.onMessage.addListener(
     if (
       isMessage(message) &&
       message.target === "background" &&
-      message.action === FETCH_X_DATA
+      message.action === INITIATE_SYNC
     ) {
       initSync();
     }
