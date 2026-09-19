@@ -7,7 +7,7 @@ export default function SidebarApp() {
     console.log("clicked");
     try {
       const response = await browser.runtime.sendMessage({
-        target: "offscreen",
+        target: "background",
         action: FETCH_X_DATA,
       });
       console.log("Reponse ", response);

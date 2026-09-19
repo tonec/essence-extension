@@ -16,7 +16,7 @@ browser.runtime.onMessage.addListener(
   (message: unknown, sender: unknown, sendResponse) => {
     if (
       isMessage(message) &&
-      message.target === "offscreen" &&
+      message.target === "background" &&
       message.action === FETCH_X_DATA
     ) {
       initSync();
