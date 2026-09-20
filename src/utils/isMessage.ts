@@ -1,7 +1,7 @@
 import { hasProperty } from "./hasProperty";
 
 type Message<T> = {
-  target: string;
+  target: "BACKGROUND" | "BRIDGE";
   action: string;
   payload: Record<string, T>;
 };

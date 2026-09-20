@@ -33,7 +33,7 @@
       if (csrf && auth && queryIdMatch) {
         // Pass the tokens securely to the main extension content script context
         window.postMessage({
-          target: 'bridge',
+          target: 'BRIDGE',
           action: 'X_TOKENS_CAPTURED',
           payload: {
             csrf,

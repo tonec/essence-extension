@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
 import reactLogo from "../images/icon.png";
-import { INITIATE_SYNC } from "@/config";
+import { BACKGROUND, INITIATE_SYNC } from "@/config";
 
 export default function SidebarApp() {
   const handleClick = async () => {
     try {
       const response = await browser.runtime.sendMessage({
-        target: "background",
+        target: BACKGROUND,
         action: INITIATE_SYNC,
       });
       console.log("Reponse ", response);

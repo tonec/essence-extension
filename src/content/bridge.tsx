@@ -1,4 +1,4 @@
-import { X_TOKENS_CAPTURED } from "@/config";
+import { BRIDGE, X_TOKENS_CAPTURED } from "@/config";
 import { defaultFeatures, defaultHeaders } from "./xFetchRequest";
 import { isMessage } from "@/utils/isMessage";
 
@@ -10,7 +10,7 @@ export default function initial() {
     // X_TOKENS_CAPTURED sent the inject script
     if (
       isMessage<string>(message) &&
-      message.target === "bridge" &&
+      message.target === BRIDGE &&
       message.action === X_TOKENS_CAPTURED
     ) {
       const { csrf, auth, queryId } = message.payload;
