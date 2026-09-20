@@ -17,14 +17,6 @@ browser.runtime.onMessage.addListener(
       initSync();
     }
 
-    if (
-      isMessage(message) &&
-      message.target === BACKGROUND &&
-      message.action === X_TOKENS_CAPTURED
-    ) {
-      fetchXData();
-    }
-
     return true;
   },
 );

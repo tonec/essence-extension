@@ -1,12 +1,12 @@
 import { hasProperty } from "./hasProperty";
 
-type Message<T> = {
+export type Message<T = unknown> = {
   target: "BACKGROUND" | "BRIDGE";
   action: string;
   payload: Record<string, T>;
 };
 
-export const isMessage = <T extends unknown>(
+export const isMessage = <T = unknown>(
   message: unknown,
 ): message is Message<T> => {
   if (message && typeof message === "object") {

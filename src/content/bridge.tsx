@@ -1,5 +1,5 @@
-import { BRIDGE, X_TOKENS_CAPTURED } from "@/config";
-import { defaultFeatures, defaultHeaders } from "./xFetchRequest";
+import { BACKGROUND, BRIDGE, X_TOKENS_CAPTURED } from "@/config";
+import { fetchXData } from "@/services/fetchData/fetchXData";
 import { isMessage } from "@/utils/isMessage";
 
 export default function initial() {
@@ -13,44 +13,9 @@ export default function initial() {
       message.target === BRIDGE &&
       message.action === X_TOKENS_CAPTURED
     ) {
-      const { csrf, auth, queryId } = message.payload;
+      const { payload } = message;
 
-      const baseUrl = `https://x.com/i/api/graphql/${queryId}/HomeLatestTimeline`;
-
-      try {
-        const response = await fetch(baseUrl, {
-          method: "POST",
-          headers: {
-            Authorization: auth,
-            "X-Csrf-Token": csrf,
-            ...defaultHeaders,
-          },
-          body: JSON.stringify({
-            queryId,
-            variables: {
-              count: 20,
-              cursor: null,
-              enableRanking: true,
-              includePromotedContent: true,
-              requestContext: "launch",
-              seenTweetIds: [],
-            },
-            fieldToggles: {
-              withPayments: false,
-            },
-            features: defaultFeatures,
-          }),
-        });
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        return await response.json();
-      } catch (error) {
-        console.error("Failed to fetch timeline:", error);
-        return null;
-      }
+      fetchXData(message);
     }
   });
 }
