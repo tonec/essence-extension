@@ -1,0 +1,402 @@
+{
+  "data": {
+    "home": {
+      "home_timeline_urt": {
+        "instructions": [
+          {
+            "entries": [
+              {
+                "content": {
+                  "__typename": "TimelineTimelineCursor",
+                  "cursorType": "Top",
+                  "entryType": "TimelineTimelineCursor",
+                  "value": "DAABCgABHSWDHaaAJxEKAAIdJJ_0dRYAYQgAAwAAAAEAAA"
+                },
+                "entryId": "cursor-top-2100228964608901121",
+                "sortIndex": "2100228964608901121"
+              },
+              {
+                "content": {
+                  "__typename": "TimelineTimelineItem",
+                  "clientEventInfo": {
+                    "component": "ranked_following",
+                    "details": {
+                      "timelinesDetails": {
+                        "controllerData": "DAACDAABDAABCgABAAAAAAAAAAAKAAoAAAGgqpiqKAgACwAAAAAPAAwDAAAAKAEAAABAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEQKABFBMbS604hB0QAAAAA=",
+                        "injectionType": "RankedFollowing"
+                      }
+                    },
+                    "element": "tweet"
+                  },
+                  "entryType": "TimelineTimelineItem",
+                  "feedbackInfo": {
+                    "feedbackKeys": ["9339575571970589518"]
+                  },
+                  "itemContent": {
+                    "__typename": "TimelineTweet",
+                    "itemType": "TimelineTweet",
+                    "tweetDisplayType": "Tweet",
+                    "tweet_results": {
+                      "result": {
+                        "__typename": "Tweet",
+                        "cashtag_attachments": [],
+                        "core": {
+                          "user_results": {
+                            "result": {
+                              "__typename": "User",
+                              "action_counts": {
+                                "favorites_count": 42482
+                              },
+                              "affiliates_highlighted_label": {},
+                              "avatar": {
+                                "image_url": "https://pbs.twimg.com/profile_images/979192426660327424/4B9g75QR_normal.jpg"
+                              },
+                              "banner": {
+                                "image_url": "https://pbs.twimg.com/profile_banners/116579971/1779383557"
+                              },
+                              "core": {
+                                "created_at": "Tue Feb 23 00:08:02 +0000 2010",
+                                "name": "Gad Saad",
+                                "screen_name": "GadSaad"
+                              },
+                              "follow_request_sent": false,
+                              "has_graduated_access": true,
+                              "id": "VXNlcjoxMTY1Nzk5NzE=",
+                              "is_blue_verified": true,
+                              "location": {
+                                "location": "Canada"
+                              },
+                              "media_permissions": {
+                                "can_media_tag": true
+                              },
+                              "notifications_settings": {
+                                "notifications_enabled": false
+                              },
+                              "parody_commentary_fan_label": "None",
+                              "pinned_items": {
+                                "tweet_ids_str": ["2099312895704113565"]
+                              },
+                              "possibly_sensitive": false,
+                              "privacy": {
+                                "protected": false
+                              },
+                              "profile_bio": {
+                                "description": "Professor, Evolutionary Behavioral Scientist, Author. Opinions are mine alone. Retweets do not necessarily imply an endorsement.",
+                                "entities": {
+                                  "description": {},
+                                  "url": {
+                                    "urls": [
+                                      {
+                                        "display_url": "gadsaad.com",
+                                        "expanded_url": "http://gadsaad.com",
+                                        "indices": [0, 23],
+                                        "url": "https://t.co/8p3F9wemqm"
+                                      }
+                                    ]
+                                  }
+                                }
+                              },
+                              "profile_description_language": "en",
+                              "profile_image_shape": "Circle",
+                              "profile_metadata": {
+                                "profile_interstitial_type": ""
+                              },
+                              "profile_translation": {
+                                "translator_type": "none"
+                              },
+                              "relationship_counts": {
+                                "followers": 1389420,
+                                "following": 485
+                              },
+                              "relationship_perspectives": {
+                                "blocked_by": false,
+                                "blocking": false,
+                                "followed_by": false,
+                                "following": true,
+                                "live_following": false,
+                                "muting": false
+                              },
+                              "rest_id": "116579971",
+                              "super_follow_eligible": true,
+                              "super_followed_by": false,
+                              "super_following": false,
+                              "tweet_counts": {
+                                "media_tweets": 22225,
+                                "tweets": 167596
+                              },
+                              "verification": {
+                                "verified": false
+                              },
+                              "website": {
+                                "url": "https://t.co/8p3F9wemqm"
+                              }
+                            }
+                          }
+                        },
+                        "edit_control": {
+                          "edit_tweet_ids": ["2099979198546706529"],
+                          "editable_until_msecs": "1789512631000",
+                          "edits_remaining": "5",
+                          "is_edit_eligible": true
+                        },
+                        "grok_analysis_button": true,
+                        "grok_annotations": {
+                          "is_image_editable_by_grok": true
+                        },
+                        "grok_translated_post_with_availability": {
+                          "is_available": false
+                        },
+                        "is_translatable": false,
+                        "legacy": {
+                          "bookmark_count": 7,
+                          "bookmarked": false,
+                          "conversation_id_str": "2099979198546706529",
+                          "created_at": "Tue Sep 15 21:50:31 +0000 2026",
+                          "display_text_range": [0, 18],
+                          "entities": {
+                            "media": [
+                              {
+                                "display_url": "pic.x.com/TuHHqXPjOq",
+                                "expanded_url": "https://x.com/GadSaad/status/2099979198546706529/photo/1",
+                                "ext_media_availability": {
+                                  "status": "Available"
+                                },
+                                "features": {
+                                  "large": {
+                                    "faces": []
+                                  },
+                                  "medium": {
+                                    "faces": []
+                                  },
+                                  "orig": {
+                                    "faces": []
+                                  },
+                                  "small": {
+                                    "faces": []
+                                  }
+                                },
+                                "id_str": "2099979188081942528",
+                                "indices": [19, 42],
+                                "media_key": "3_2099979188081942528",
+                                "media_results": {
+                                  "result": {
+                                    "media_key": "3_2099979188081942528"
+                                  }
+                                },
+                                "media_url_https": "https://pbs.twimg.com/media/HSSf8gVWYAAT5fN.jpg",
+                                "original_info": {
+                                  "focus_rects": [
+                                    {
+                                      "h": 860,
+                                      "w": 1536,
+                                      "x": 0,
+                                      "y": 645
+                                    },
+                                    {
+                                      "h": 1536,
+                                      "w": 1536,
+                                      "x": 0,
+                                      "y": 307
+                                    },
+                                    {
+                                      "h": 1751,
+                                      "w": 1536,
+                                      "x": 0,
+                                      "y": 200
+                                    },
+                                    {
+                                      "h": 2048,
+                                      "w": 1024,
+                                      "x": 256,
+                                      "y": 0
+                                    },
+                                    {
+                                      "h": 2048,
+                                      "w": 1536,
+                                      "x": 0,
+                                      "y": 0
+                                    }
+                                  ],
+                                  "height": 2048,
+                                  "width": 1536
+                                },
+                                "sizes": {
+                                  "large": {
+                                    "h": 2048,
+                                    "resize": "fit",
+                                    "w": 1536
+                                  },
+                                  "medium": {
+                                    "h": 1200,
+                                    "resize": "fit",
+                                    "w": 900
+                                  },
+                                  "small": {
+                                    "h": 680,
+                                    "resize": "fit",
+                                    "w": 510
+                                  },
+                                  "thumb": {
+                                    "h": 150,
+                                    "resize": "crop",
+                                    "w": 150
+                                  }
+                                },
+                                "type": "photo",
+                                "url": "https://t.co/TuHHqXPjOq"
+                              }
+                            ],
+                            "user_mentions": [
+                              {
+                                "id_str": "240504013",
+                                "indices": [5, 17],
+                                "name": "Katie Miller",
+                                "screen_name": "KatieMiller"
+                              }
+                            ]
+                          },
+                          "extended_entities": {
+                            "media": [
+                              {
+                                "display_url": "pic.x.com/TuHHqXPjOq",
+                                "expanded_url": "https://x.com/GadSaad/status/2099979198546706529/photo/1",
+                                "ext_media_availability": {
+                                  "status": "Available"
+                                },
+                                "features": {
+                                  "large": {
+                                    "faces": []
+                                  },
+                                  "medium": {
+                                    "faces": []
+                                  },
+                                  "orig": {
+                                    "faces": []
+                                  },
+                                  "small": {
+                                    "faces": []
+                                  }
+                                },
+                                "id_str": "2099979188081942528",
+                                "indices": [19, 42],
+                                "media_key": "3_2099979188081942528",
+                                "media_results": {
+                                  "result": {
+                                    "media_key": "3_2099979188081942528"
+                                  }
+                                },
+                                "media_url_https": "https://pbs.twimg.com/media/HSSf8gVWYAAT5fN.jpg",
+                                "original_info": {
+                                  "focus_rects": [
+                                    {
+                                      "h": 860,
+                                      "w": 1536,
+                                      "x": 0,
+                                      "y": 645
+                                    },
+                                    {
+                                      "h": 1536,
+                                      "w": 1536,
+                                      "x": 0,
+                                      "y": 307
+                                    },
+                                    {
+                                      "h": 1751,
+                                      "w": 1536,
+                                      "x": 0,
+                                      "y": 200
+                                    },
+                                    {
+                                      "h": 2048,
+                                      "w": 1024,
+                                      "x": 256,
+                                      "y": 0
+                                    },
+                                    {
+                                      "h": 2048,
+                                      "w": 1536,
+                                      "x": 0,
+                                      "y": 0
+                                    }
+                                  ],
+                                  "height": 2048,
+                                  "width": 1536
+                                },
+                                "sizes": {
+                                  "large": {
+                                    "h": 2048,
+                                    "resize": "fit",
+                                    "w": 1536
+                                  },
+                                  "medium": {
+                                    "h": 1200,
+                                    "resize": "fit",
+                                    "w": 900
+                                  },
+                                  "small": {
+                                    "h": 680,
+                                    "resize": "fit",
+                                    "w": 510
+                                  },
+                                  "thumb": {
+                                    "h": 150,
+                                    "resize": "crop",
+                                    "w": 150
+                                  }
+                                },
+                                "type": "photo",
+                                "url": "https://t.co/TuHHqXPjOq"
+                              }
+                            ]
+                          },
+                          "favorite_count": 832,
+                          "favorited": false,
+                          "full_text": "With @KatieMiller. https://t.co/TuHHqXPjOq",
+                          "id_str": "2099979198546706529",
+                          "is_quote_status": false,
+                          "lang": "en",
+                          "possibly_sensitive": false,
+                          "possibly_sensitive_editable": true,
+                          "quote_count": 0,
+                          "reply_count": 16,
+                          "retweet_count": 44,
+                          "retweeted": false,
+                          "user_id_str": "116579971"
+                        },
+                        "rest_id": "2099979198546706529",
+                        "source": "\u003ca href=\"http://twitter.com/download/iphone\" rel=\"nofollow\"\u003eTwitter for iPhone\u003c/a\u003e",
+                        "unmention_data": {},
+                        "views": {
+                          "count": "28763",
+                          "state": "EnabledWithCount"
+                        }
+                      }
+                    }
+                  }
+                },
+                "entryId": "tweet-2099979198546706529",
+                "sortIndex": "2100228964608901120"
+              },
+              {
+                "content": {
+                  "__typename": "TimelineTimelineCursor",
+                  "cursorType": "Bottom",
+                  "entryType": "TimelineTimelineCursor",
+                  "value": "DAABCgABHSWDHaZ__9sKAAIdJXZwlFcQTQgAAwAAAAIAAA"
+                },
+                "entryId": "cursor-bottom-2100228964608901085",
+                "sortIndex": "2100228964608901085"
+              }
+            ],
+            "type": "TimelineAddEntries"
+          }
+        ],
+        "metadata": {
+          "scribeConfig": {
+            "page": "ranked_following"
+          }
+        }
+      }
+    }
+  }
+}

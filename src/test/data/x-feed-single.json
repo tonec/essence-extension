@@ -1,0 +1,526 @@
+{
+  "content": {
+    "__typename": "TimelineTimelineModule",
+    "clientEventInfo": {
+      "component": "for_you_in_network"
+    },
+    "displayType": "VerticalConversation",
+    "entryType": "TimelineTimelineModule",
+    "items": [
+      {
+        "entryId": "tweet-2100160440177217626",
+        "item": {
+          "clientEventInfo": {
+            "component": "for_you_in_network",
+            "details": {
+              "timelinesDetails": {
+                "controllerData": "DAACDAABDAABCgABAAAAAAAAAAAKAAoAAAGgqo1+dQgACwAAAAkPAAwDAAAAKAUAAABgAAAAAAABAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAMEKABHNv775RBBKTQAAAAA=",
+                "injectionType": "ForYouInNetwork"
+              }
+            },
+            "element": "tweet"
+          },
+          "itemContent": {
+            "__typename": "TimelineTweet",
+            "itemType": "TimelineTweet",
+            "tweetDisplayType": "Tweet",
+            "tweet_results": {
+              "result": {
+                "__typename": "Tweet",
+                "cashtag_attachments": [],
+                "core": {
+                  "user_results": {
+                    "result": {
+                      "__typename": "User",
+                      "action_counts": {
+                        "favorites_count": 6549
+                      },
+                      "affiliates_highlighted_label": {},
+                      "avatar": {
+                        "image_url": "https://pbs.twimg.com/profile_images/2093778395217772544/Y-TUU3rJ_normal.jpg"
+                      },
+                      "banner": {
+                        "image_url": "https://pbs.twimg.com/profile_banners/1921866319344914433/1783178345"
+                      },
+                      "core": {
+                        "created_at": "Mon May 12 09:53:58 +0000 2025",
+                        "name": "DME",
+                        "screen_name": "dmeinvestor"
+                      },
+                      "follow_request_sent": false,
+                      "has_graduated_access": true,
+                      "id": "VXNlcjoxOTIxODY2MzE5MzQ0OTE0NDMz",
+                      "is_blue_verified": true,
+                      "location": {
+                        "location": "Portugal"
+                      },
+                      "media_permissions": {
+                        "can_media_tag": true
+                      },
+                      "notifications_settings": {
+                        "notifications_enabled": false
+                      },
+                      "parody_commentary_fan_label": "None",
+                      "pinned_items": {
+                        "tweet_ids_str": ["2099226001301536769"]
+                      },
+                      "possibly_sensitive": false,
+                      "privacy": {
+                        "protected": false
+                      },
+                      "professional": {
+                        "professional_type": "Creator",
+                        "rest_id": "2047994323728310584"
+                      },
+                      "profile_bio": {
+                        "description": "Independent Investor | Research on Small Caps, Commodities \u0026 Emerging Themes | Hunting Multibaggers Before the Crowd | Not Financial Advice",
+                        "entities": {
+                          "description": {},
+                          "url": {
+                            "urls": [
+                              {
+                                "display_url": "dmeresearch.substack.com",
+                                "expanded_url": "https://dmeresearch.substack.com/",
+                                "indices": [0, 23],
+                                "url": "https://t.co/oFMYYo2KST"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "profile_description_language": "en",
+                      "profile_image_shape": "Circle",
+                      "profile_metadata": {
+                        "profile_interstitial_type": ""
+                      },
+                      "profile_translation": {
+                        "translator_type": "none"
+                      },
+                      "relationship_counts": {
+                        "followers": 1473,
+                        "following": 195
+                      },
+                      "relationship_perspectives": {
+                        "blocked_by": false,
+                        "blocking": false,
+                        "followed_by": false,
+                        "following": false,
+                        "live_following": false,
+                        "muting": false
+                      },
+                      "rest_id": "1921866319344914433",
+                      "super_follow_eligible": false,
+                      "super_followed_by": false,
+                      "super_following": false,
+                      "tweet_counts": {
+                        "media_tweets": 382,
+                        "tweets": 3535
+                      },
+                      "verification": {
+                        "verified": false
+                      },
+                      "website": {
+                        "url": "https://t.co/oFMYYo2KST"
+                      }
+                    }
+                  }
+                },
+                "edit_control": {
+                  "edit_tweet_ids": ["2100160440177217626"],
+                  "editable_until_msecs": "1789555842000",
+                  "edits_remaining": "5",
+                  "is_edit_eligible": true
+                },
+                "grok_analysis_button": true,
+                "grok_annotations": {
+                  "is_image_editable_by_grok": false
+                },
+                "grok_translated_post_with_availability": {
+                  "is_available": false
+                },
+                "is_translatable": false,
+                "legacy": {
+                  "bookmark_count": 0,
+                  "bookmarked": false,
+                  "conversation_id_str": "2100160440177217626",
+                  "created_at": "Wed Sep 16 09:50:42 +0000 2026",
+                  "display_text_range": [0, 121],
+                  "entities": {},
+                  "favorite_count": 5,
+                  "favorited": false,
+                  "full_text": "I don’t want to grab myself too early, but if the FED holds rates today my September prediction might play out perfectly.",
+                  "id_str": "2100160440177217626",
+                  "is_quote_status": true,
+                  "lang": "en",
+                  "quote_count": 0,
+                  "quoted_status_id_str": "2095111154230059262",
+                  "quoted_status_permalink": {
+                    "display": "x.com/dmeinvestor/st…",
+                    "expanded": "https://twitter.com/dmeinvestor/status/2095111154230059262",
+                    "url": "https://t.co/wRL2g2YN2w"
+                  },
+                  "reply_count": 2,
+                  "retweet_count": 0,
+                  "retweeted": false,
+                  "user_id_str": "1921866319344914433"
+                },
+                "quoted_status_result": {
+                  "result": {
+                    "__typename": "Tweet",
+                    "core": {
+                      "user_results": {
+                        "result": {
+                          "__typename": "User",
+                          "action_counts": {
+                            "favorites_count": 6549
+                          },
+                          "affiliates_highlighted_label": {},
+                          "avatar": {
+                            "image_url": "https://pbs.twimg.com/profile_images/2093778395217772544/Y-TUU3rJ_normal.jpg"
+                          },
+                          "banner": {
+                            "image_url": "https://pbs.twimg.com/profile_banners/1921866319344914433/1783178345"
+                          },
+                          "core": {
+                            "created_at": "Mon May 12 09:53:58 +0000 2025",
+                            "name": "DME",
+                            "screen_name": "dmeinvestor"
+                          },
+                          "follow_request_sent": false,
+                          "has_graduated_access": true,
+                          "id": "VXNlcjoxOTIxODY2MzE5MzQ0OTE0NDMz",
+                          "is_blue_verified": true,
+                          "location": {
+                            "location": "Portugal"
+                          },
+                          "media_permissions": {
+                            "can_media_tag": true
+                          },
+                          "notifications_settings": {
+                            "notifications_enabled": false
+                          },
+                          "parody_commentary_fan_label": "None",
+                          "pinned_items": {
+                            "tweet_ids_str": ["2099226001301536769"]
+                          },
+                          "possibly_sensitive": false,
+                          "privacy": {
+                            "protected": false
+                          },
+                          "professional": {
+                            "professional_type": "Creator",
+                            "rest_id": "2047994323728310584"
+                          },
+                          "profile_bio": {
+                            "description": "Independent Investor | Research on Small Caps, Commodities \u0026 Emerging Themes | Hunting Multibaggers Before the Crowd | Not Financial Advice",
+                            "entities": {
+                              "description": {},
+                              "url": {
+                                "urls": [
+                                  {
+                                    "display_url": "dmeresearch.substack.com",
+                                    "expanded_url": "https://dmeresearch.substack.com/",
+                                    "indices": [0, 23],
+                                    "url": "https://t.co/oFMYYo2KST"
+                                  }
+                                ]
+                              }
+                            }
+                          },
+                          "profile_description_language": "en",
+                          "profile_image_shape": "Circle",
+                          "profile_metadata": {
+                            "profile_interstitial_type": ""
+                          },
+                          "profile_translation": {
+                            "translator_type": "none"
+                          },
+                          "relationship_counts": {
+                            "followers": 1473,
+                            "following": 195
+                          },
+                          "relationship_perspectives": {
+                            "blocked_by": false,
+                            "blocking": false,
+                            "followed_by": false,
+                            "following": false,
+                            "live_following": false,
+                            "muting": false
+                          },
+                          "rest_id": "1921866319344914433",
+                          "super_follow_eligible": false,
+                          "super_followed_by": false,
+                          "super_following": false,
+                          "tweet_counts": {
+                            "media_tweets": 382,
+                            "tweets": 3535
+                          },
+                          "verification": {
+                            "verified": false
+                          },
+                          "website": {
+                            "url": "https://t.co/oFMYYo2KST"
+                          }
+                        }
+                      }
+                    },
+                    "edit_control": {
+                      "edit_control_initial": {
+                        "edit_tweet_ids": [
+                          "2095111104632442938",
+                          "2095111154230059262"
+                        ],
+                        "editable_until_msecs": "1788351987000",
+                        "edits_remaining": "4",
+                        "is_edit_eligible": true
+                      },
+                      "initial_tweet_id": "2095111104632442938"
+                    },
+                    "grok_analysis_button": true,
+                    "grok_translated_post_with_availability": {
+                      "is_available": false
+                    },
+                    "is_translatable": false,
+                    "legacy": {
+                      "bookmark_count": 1,
+                      "bookmarked": false,
+                      "conversation_id_str": "2095111154230059262",
+                      "created_at": "Wed Sep 02 11:26:39 +0000 2026",
+                      "display_text_range": [0, 276],
+                      "entities": {},
+                      "favorite_count": 12,
+                      "favorited": false,
+                      "full_text": "My prediction for September:\n\n- Markets remain mostly red until the CPI report on September 11\n\n- CPI comes in line or hotter than expected, with rising energy prices adding inflationary pressure\n\n- A hot print triggers another sell-off and increases the probability of a rate",
+                      "id_str": "2095111154230059262",
+                      "is_quote_status": false,
+                      "lang": "en",
+                      "quote_count": 1,
+                      "reply_count": 0,
+                      "retweet_count": 0,
+                      "retweeted": false,
+                      "user_id_str": "1921866319344914433"
+                    },
+                    "note_tweet": {
+                      "is_expandable": true,
+                      "note_tweet_results": {
+                        "result": {
+                          "entity_set": {
+                            "hashtags": [],
+                            "smarttags": [],
+                            "symbols": [],
+                            "urls": [],
+                            "user_mentions": []
+                          },
+                          "id": "Tm90ZVR3ZWV0OjIwOTUxMTExNTQxNTQ1ODIwMTc=",
+                          "richtext": {
+                            "richtext_tags": []
+                          },
+                          "text": "My prediction for September:\n\n- Markets remain mostly red until the CPI report on September 11\n\n- CPI comes in line or hotter than expected, with rising energy prices adding inflationary pressure\n\n- A hot print triggers another sell-off and increases the probability of a rate hike\n\n- The Fed still delivers NO RATE HIKE on September 16\n\n- Markets rally into the end of the month\n\nLet’s see how it ages."
+                        }
+                      }
+                    },
+                    "previous_counts": {
+                      "bookmark_count": 0,
+                      "favorite_count": 0,
+                      "quote_count": 0,
+                      "reply_count": 0,
+                      "retweet_count": 0
+                    },
+                    "rest_id": "2095111154230059262",
+                    "source": "\u003ca href=\"https://mobile.twitter.com\" rel=\"nofollow\"\u003eTwitter Web App\u003c/a\u003e",
+                    "unmention_data": {},
+                    "views": {
+                      "count": "2812",
+                      "state": "EnabledWithCount"
+                    }
+                  }
+                },
+                "rest_id": "2100160440177217626",
+                "source": "\u003ca href=\"http://twitter.com/download/iphone\" rel=\"nofollow\"\u003eTwitter for iPhone\u003c/a\u003e",
+                "unmention_data": {},
+                "views": {
+                  "count": "843",
+                  "state": "EnabledWithCount"
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "entryId": "tweet-2100178135631229204",
+        "item": {
+          "clientEventInfo": {
+            "component": "for_you_in_network",
+            "details": {
+              "timelinesDetails": {
+                "controllerData": "DAACDAABDAABCgABAAAAAAAAAAAKAAoAAAGgqo1+dQgACwAAAAkPAAwDAAAAKAUAAABgAAAAAAABAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAMEKABHNv775RBBKTQAAAAA=",
+                "injectionType": "ForYouInNetwork"
+              }
+            },
+            "element": "tweet"
+          },
+          "feedbackInfo": {
+            "feedbackKeys": ["15807013556943428837"]
+          },
+          "itemContent": {
+            "__typename": "TimelineTweet",
+            "itemType": "TimelineTweet",
+            "tweetDisplayType": "Tweet",
+            "tweet_results": {
+              "result": {
+                "__typename": "Tweet",
+                "cashtag_attachments": [],
+                "core": {
+                  "user_results": {
+                    "result": {
+                      "__typename": "User",
+                      "action_counts": {
+                        "favorites_count": 20924
+                      },
+                      "affiliates_highlighted_label": {},
+                      "avatar": {
+                        "image_url": "https://pbs.twimg.com/profile_images/2082895279695515648/wSNj0Qpt_normal.jpg"
+                      },
+                      "banner": {
+                        "image_url": "https://pbs.twimg.com/profile_banners/1195678013318451202/1789360609"
+                      },
+                      "core": {
+                        "created_at": "Sat Nov 16 12:21:03 +0000 2019",
+                        "name": "Black Panther Capital",
+                        "screen_name": "BlackPantherCap"
+                      },
+                      "follow_request_sent": false,
+                      "has_graduated_access": true,
+                      "id": "VXNlcjoxMTk1Njc4MDEzMzE4NDUxMjAy",
+                      "is_blue_verified": true,
+                      "location": {
+                        "location": "Top of the food chain"
+                      },
+                      "media_permissions": {
+                        "can_media_tag": true
+                      },
+                      "notifications_settings": {
+                        "notifications_enabled": false
+                      },
+                      "parody_commentary_fan_label": "None",
+                      "pinned_items": {
+                        "tweet_ids_str": ["2007151986920075500"]
+                      },
+                      "possibly_sensitive": false,
+                      "privacy": {
+                        "protected": false
+                      },
+                      "professional": {
+                        "professional_type": "Creator",
+                        "rest_id": "1523003019071213568"
+                      },
+                      "profile_bio": {
+                        "description": "Thematic Research \u0026 Analysis focused on structural shifts and the companies positioned to benefit. Opinions only. Not financial advice. No Telegram/WhatsApp.",
+                        "entities": {
+                          "description": {}
+                        }
+                      },
+                      "profile_description_language": "en",
+                      "profile_image_shape": "Circle",
+                      "profile_metadata": {
+                        "profile_interstitial_type": ""
+                      },
+                      "profile_translation": {
+                        "translator_type": "none"
+                      },
+                      "relationship_counts": {
+                        "followers": 49685,
+                        "following": 409
+                      },
+                      "relationship_perspectives": {
+                        "blocked_by": false,
+                        "blocking": false,
+                        "followed_by": false,
+                        "following": true,
+                        "live_following": false,
+                        "muting": false
+                      },
+                      "rest_id": "1195678013318451202",
+                      "super_follow_eligible": false,
+                      "super_followed_by": false,
+                      "super_following": false,
+                      "tweet_counts": {
+                        "media_tweets": 1120,
+                        "tweets": 12247
+                      },
+                      "verification": {
+                        "verified": false
+                      },
+                      "website": {
+                        "url": ""
+                      }
+                    }
+                  }
+                },
+                "edit_control": {
+                  "edit_tweet_ids": ["2100178135631229204"],
+                  "editable_until_msecs": "1789560061000",
+                  "edits_remaining": "5",
+                  "is_edit_eligible": false
+                },
+                "grok_analysis_button": true,
+                "grok_annotations": {},
+                "grok_translated_post_with_availability": {
+                  "is_available": false
+                },
+                "is_translatable": false,
+                "legacy": {
+                  "bookmark_count": 0,
+                  "bookmarked": false,
+                  "conversation_id_str": "2100160440177217626",
+                  "created_at": "Wed Sep 16 11:01:01 +0000 2026",
+                  "display_text_range": [13, 50],
+                  "entities": {
+                    "user_mentions": [
+                      {
+                        "id_str": "1921866319344914433",
+                        "indices": [0, 12],
+                        "name": "DME",
+                        "screen_name": "dmeinvestor"
+                      }
+                    ]
+                  },
+                  "favorite_count": 2,
+                  "favorited": false,
+                  "full_text": "@dmeinvestor Great prediction! Well done, so far 👊",
+                  "id_str": "2100178135631229204",
+                  "in_reply_to_screen_name": "dmeinvestor",
+                  "in_reply_to_status_id_str": "2100160440177217626",
+                  "in_reply_to_user_id_str": "1921866319344914433",
+                  "is_quote_status": false,
+                  "lang": "en",
+                  "quote_count": 0,
+                  "reply_count": 1,
+                  "retweet_count": 0,
+                  "retweeted": false,
+                  "user_id_str": "1195678013318451202"
+                },
+                "rest_id": "2100178135631229204",
+                "source": "\u003ca href=\"http://twitter.com/download/iphone\" rel=\"nofollow\"\u003eTwitter for iPhone\u003c/a\u003e",
+                "unmention_data": {},
+                "views": {
+                  "count": "255",
+                  "state": "EnabledWithCount"
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "metadata": {
+      "conversationMetadata": {
+        "allTweetIds": ["2100160440177217626", "2100178135631229204"],
+        "enableDeduplication": true
+      }
+    }
+  },
+  "entryId": "home-conversation-2100178135631229204",
+  "sortIndex": "2100226354438995959"
+}

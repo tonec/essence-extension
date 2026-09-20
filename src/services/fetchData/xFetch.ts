@@ -1,18 +1,20 @@
-import { Message } from "@/utils/isMessage";
-import { defaultFeatures, defaultHeaders } from "./xFetchRequest";
+import { HomeLatestTimelineResponseSchema } from "./xSchema";
+import { defaultFeatures, defaultHeaders } from "./xRequestDefaults";
 
-export const fetchXData = async (message: Message) => {
-  const { csrf, auth, queryId } = message.payload;
-
-  if (typeof auth !== "string" || typeof csrf !== "string") {
-    console.warn("Either 'auth' or 'csrf' not found.");
-    return;
-  }
-
+export const xFetch = async ({
+  auth,
+  csrf,
+  queryId,
+  cursor,
+}: {
+  auth: string;
+  csrf: string;
+  queryId: string;
+  cursor: string | null;
+}) => {
   const baseUrl = `https://x.com/i/api/graphql/${queryId}/HomeLatestTimeline`;
 
   try {
-    console.log("fetching");
     const response = await fetch(baseUrl, {
       method: "POST",
       headers: {
@@ -24,7 +26,7 @@ export const fetchXData = async (message: Message) => {
         queryId,
         variables: {
           count: 20,
-          cursor: null,
+          cursor,
           enableRanking: true,
           includePromotedContent: true,
           requestContext: "launch",
@@ -37,13 +39,20 @@ export const fetchXData = async (message: Message) => {
       }),
     });
 
-    console.log("response", response);
-
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    return await response.json();
+    const rawData = await response.json();
+
+    const result = HomeLatestTimelineResponseSchema.safeParse(rawData);
+
+    if (!result.success) {
+      console.error("X API Response format updated:", result.error.format());
+      return;
+    }
+
+    return result;
   } catch (error) {
     console.error("Failed to fetch timeline:", error);
     return null;

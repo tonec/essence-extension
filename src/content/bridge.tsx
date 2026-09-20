@@ -1,6 +1,6 @@
-import { BACKGROUND, BRIDGE, X_TOKENS_CAPTURED } from "@/config";
-import { fetchXData } from "@/services/fetchData/fetchXData";
+import { BRIDGE, X_TOKENS_CAPTURED } from "@/config";
 import { isMessage } from "@/utils/isMessage";
+import { xGetData } from "@/services/fetchData/xGetData";
 
 export default function initial() {
   window.addEventListener("message", async ({ source, data: message }) => {
@@ -13,9 +13,7 @@ export default function initial() {
       message.target === BRIDGE &&
       message.action === X_TOKENS_CAPTURED
     ) {
-      const { payload } = message;
-
-      fetchXData(message);
+      const response = await xGetData(message);
     }
   });
 }

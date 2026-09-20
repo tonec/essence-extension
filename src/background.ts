@@ -1,7 +1,7 @@
 import { BACKGROUND, INITIATE_SYNC, X_TOKENS_CAPTURED } from "./config";
 import { isMessage } from "./utils/isMessage";
 import { initSync } from "./sync";
-import { fetchXData } from "./services/fetchData/fetchXData";
+import { fetchXData } from "./services/fetchData/xGetData";
 
 chrome.sidePanel
   .setPanelBehavior({ openPanelOnActionClick: true })
