@@ -1,6 +1,6 @@
 import { BRIDGE, X_TOKENS_CAPTURED } from "@/config";
 import { isMessage } from "@/utils/isMessage";
-import { xGetData } from "@/services/fetchData/x/xGetData";
+import { xGetData } from "@/services/fetchData/x/HomeLatestTimeline/xGetData";
 
 export default function initial() {
   window.addEventListener("message", async ({ source, data: message }) => {

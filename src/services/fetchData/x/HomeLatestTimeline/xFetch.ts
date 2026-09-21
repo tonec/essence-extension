@@ -1,4 +1,4 @@
-import { HomeLatestTimelineResponseSchema } from "./xSchema";
+import { HomeLatestTimelineResponseSchema } from "./schema";
 import { defaultFeatures, defaultHeaders } from "./xRequestDefaults";
 
 export const xFetch = async ({

@@ -1,14 +1,14 @@
 import {
-  TimelineEntry,
-  TimelineCursor,
-  HomeLatestTimelineResponse,
-} from "./xSchema";
+  XTimelineEntry,
+  XTimelineCursor,
+  XHomeLatestTimelineResponse,
+} from "./schema";
 
-const isCursorEntry = (entry: TimelineEntry): entry is TimelineCursor => {
+const isCursorEntry = (entry: XTimelineEntry): entry is XTimelineCursor => {
   return entry?.content?.__typename === "TimelineTimelineCursor";
 };
 
-export const getBottomCursor = (result: HomeLatestTimelineResponse) => {
+export const getBottomCursor = (result: XHomeLatestTimelineResponse) => {
   const instructions = result.data.home.home_timeline_urt.instructions;
   const addEntries = instructions.find(
     (inst) => inst.type === "TimelineAddEntries",
@@ -17,7 +17,7 @@ export const getBottomCursor = (result: HomeLatestTimelineResponse) => {
   if (addEntries && "entries" in addEntries) {
     const cursorEntry = addEntries.entries.find(
       (entry) =>
-        isCursorEntry(entry) && entry.entryId.startsWith("cursor-bottom-"),
+        isCursorEntry(entry) && entry?.entryId.startsWith("cursor-bottom-"),
     );
 
     if (

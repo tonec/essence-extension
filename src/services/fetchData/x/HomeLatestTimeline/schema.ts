@@ -271,9 +271,9 @@ export const HomeLatestTimelineResponseSchema = z.object({
 
 export type XUser = z.infer<typeof XUser>;
 export type XTweetLegacy = z.infer<typeof XTweetLegacySchema>;
-export type TimelineEntry = z.infer<typeof TimelineEntrySchema>;
-export type TimelineCursor = z.infer<typeof TimelineCursorSchema>;
-export type TimelineItem = z.infer<typeof TimelineItemSchema>;
-export type HomeLatestTimelineResponse = z.infer<
+export type XTimelineEntry = z.infer<typeof TimelineEntrySchema>;
+export type XTimelineCursor = z.infer<typeof TimelineCursorSchema>;
+export type XTimelineItem = z.infer<typeof TimelineItemSchema>;
+export type XHomeLatestTimelineResponse = z.infer<
   typeof HomeLatestTimelineResponseSchema
 >;

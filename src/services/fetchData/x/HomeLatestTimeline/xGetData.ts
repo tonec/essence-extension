@@ -1,11 +1,8 @@
 import { Message } from "@/utils/isMessage";
-import testXfeed from "@/test/data/x-feed-all.json";
-import { HomeLatestTimelineResponseSchema } from "./xSchema";
 import { getBottomCursor } from "./xGetBottomCursor";
 import { getEarliestPostDate } from "./xGetLastPostDate";
 import { getRandomRange } from "@/utils/getRandomRange";
 import { xFetch } from "./xFetch";
-import { withTimeout } from "@/utils/withTimeout";
 import { sleep } from "@/utils/sleep";
 
 export const xGetData = async (message: Message) => {

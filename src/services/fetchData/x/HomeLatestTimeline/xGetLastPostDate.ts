@@ -1,23 +1,23 @@
 import {
-  TimelineEntry,
-  TimelineItem,
-  HomeLatestTimelineResponse,
-} from "./xSchema";
+  XTimelineEntry,
+  XTimelineItem,
+  XHomeLatestTimelineResponse,
+} from "./schema";
 
-const isTimelineItem = (entry: TimelineEntry): entry is TimelineItem => {
+const isTimelineItem = (entry: XTimelineEntry): entry is XTimelineItem => {
   return entry?.content?.__typename === "TimelineTimelineItem";
 };
 
-export const getPosts = (result: HomeLatestTimelineResponse) => {
+export const getPosts = (result: XHomeLatestTimelineResponse) => {
   const instructions = result.data.home.home_timeline_urt.instructions;
   const addEntries = instructions.find(
     (inst) => inst.type === "TimelineAddEntries",
   );
-  let posts: TimelineItem[] = [];
+  let posts: XTimelineItem[] = [];
 
   if (addEntries) {
     posts = addEntries.entries.filter(
-      (entry): entry is TimelineItem =>
+      (entry): entry is XTimelineItem =>
         isTimelineItem(entry) && entry.entryId.startsWith("tweet-"),
     );
   }
@@ -25,7 +25,7 @@ export const getPosts = (result: HomeLatestTimelineResponse) => {
   return posts;
 };
 
-export const getEarliestPostDate = (result: HomeLatestTimelineResponse) => {
+export const getEarliestPostDate = (result: XHomeLatestTimelineResponse) => {
   const posts = getPosts(result);
   const postDates = posts
     .map((post) => {
