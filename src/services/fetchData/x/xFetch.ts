@@ -10,7 +10,7 @@ export const xFetch = async ({
   auth: string;
   csrf: string;
   queryId: string;
-  cursor: string | null;
+  cursor: string | undefined;
 }) => {
   const baseUrl = `https://x.com/i/api/graphql/${queryId}/HomeLatestTimeline`;
 
