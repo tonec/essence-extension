@@ -25,10 +25,10 @@ export const xFetch = async ({
       body: JSON.stringify({
         queryId,
         variables: {
-          count: 20,
+          count: 200,
           cursor,
-          enableRanking: true,
-          includePromotedContent: true,
+          enableRanking: false,
+          includePromotedContent: false,
           requestContext: "launch",
           seenTweetIds: [],
         },

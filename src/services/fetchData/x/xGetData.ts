@@ -21,10 +21,12 @@ export const xGetData = async (message: Message) => {
   }
 
   let lastSyncDate: Date = new Date();
-  lastSyncDate.setHours(lastSyncDate.getHours() - 12);
+  lastSyncDate.setHours(lastSyncDate.getHours() - 2);
 
   let cursor: undefined | string = undefined;
-  let earliestPostDate: string | undefined = undefined;
+  let earliestPostDate: Date | undefined = undefined;
+
+  let count = 0;
 
   do {
     // fetch data while earliest post date is after last sync date
@@ -42,16 +44,20 @@ export const xGetData = async (message: Message) => {
     //   console.log("Parse success: ", result.data);
     // }
 
-    // if (!result.data) return;
+    if (!result?.data) return;
 
     earliestPostDate = getEarliestPostDate(result.data);
     cursor = getBottomCursor(result.data);
 
     await sleep(getRandomRange(3000, 5000));
 
+    count = count + 1;
+
+    console.log("count", count);
+
     // Test block
     console.log("earliestPostDate", new Date(earliestPostDate!));
     console.log("lastSyncDate", lastSyncDate);
-    console.log("test", new Date(earliestPostDate!) > lastSyncDate);
-  } while (new Date(earliestPostDate!) > lastSyncDate);
+    console.log("test", earliestPostDate > lastSyncDate);
+  } while (earliestPostDate > lastSyncDate && count < 5);
 };

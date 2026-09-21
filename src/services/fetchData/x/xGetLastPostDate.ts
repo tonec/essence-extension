@@ -28,12 +28,17 @@ export const getPosts = (result: HomeLatestTimelineResponse) => {
 export const getEarliestPostDate = (result: HomeLatestTimelineResponse) => {
   const posts = getPosts(result);
   const postDates = posts
-    .map(
-      (post) =>
+    .map((post) => {
+      const date =
         post.content.itemContent.tweet_results.result.legacy?.created_at ||
-        post.content.itemContent.tweet_results.result.tweet?.legacy?.created_at,
-    )
-    .sort();
+        post.content.itemContent.tweet_results.result.tweet?.legacy?.created_at;
+
+      return date ? new Date(date) : undefined;
+    })
+    .filter((date) => date !== undefined)
+    .sort((a, b) => a.getTime() - b.getTime());
+
+  console.log("postDate", JSON.stringify(postDates, null, 2));
 
   return postDates[0];
 };
